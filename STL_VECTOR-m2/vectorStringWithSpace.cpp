@@ -10,9 +10,15 @@ int main()
     {
         getline(cin,v[i]);
     }
-    for(string val:v)
+    // for(string val:v)
+    // {
+    //     cout<<val<<endl;
+    // }
+    while (!v.empty())
     {
-        cout<<val<<endl;
+        cout<<v.back()<<" ";
+        v.pop_back();
     }
+    
     return 0;
 }
