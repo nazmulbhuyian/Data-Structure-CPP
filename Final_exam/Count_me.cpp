@@ -33,7 +33,10 @@
 // papa 3
 
 #include <bits/stdc++.h>
+
 using namespace std;
+
+
 
 int main() {
     int test;
@@ -47,25 +50,22 @@ int main() {
         stringstream ss(sentence);
         map<string, int> mp;
 
+        string ans;
+        int ansCount = 0;
+
         while (ss >> word) {
             mp[word]++;
-        }
-
-        string text;
-        int count = 0;
-
-        for (auto it = mp.begin(); it != mp.end(); it++) {
-            // cout<<it->first<<" "<<it->second;
-            if (it->second > count) {
-                count = it->second;
-                text = it->first;
+            if (mp[word] > ansCount) {
+                ansCount = mp[word];
+                ans = word;
             }
         }
 
-        cout << text << " " << count << endl;
+        cout << ans << " " << ansCount << endl;
 
         test--;
     }
 
     return 0;
 }
+
